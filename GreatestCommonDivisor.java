@@ -9,24 +9,23 @@ public class GreatestCommonDivisor {
     Scanner sc = new Scanner(System.in);
     int a = sc.nextInt();
     int b = sc.nextInt();
+    sc.close();
     var aList = hoge(a);
     var bList = hoge(b);
 
     // 最大公約数の候補リストを作成する
-    var commonList = new ArrayList<Integer>();
-    for (int targetA : aList) {
+    FOR: for (int targetA : aList) {
       for (int targetB : bList) {
         if (targetA > targetB) {
           break;
         }
         if (targetA == targetB) {
-          commonList.add(targetA);
-          break;
+          System.out.println(targetA);
+          break FOR;
         }
       }
     }
 
-    System.out.println(commonList.stream().max(Comparator.comparingInt(i -> i)).get());
   }
 
   // 約数のリストを求める (大きい順)
