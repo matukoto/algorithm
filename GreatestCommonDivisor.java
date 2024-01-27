@@ -13,16 +13,14 @@ public class GreatestCommonDivisor {
     var aList = hoge(a);
     var bList = hoge(b);
 
-    // 最大公約数の候補リストを作成する
-    FOR: for (int targetA : aList) {
-      for (int targetB : bList) {
-        if (targetA > targetB) {
-          break;
-        }
-        if (targetA == targetB) {
-          System.out.println(targetA);
-          break FOR;
-        }
+    // 探索用のmap
+    var aMap = new LinkedHashMap<Integer, Integer>();
+    aList.forEach(s -> aMap.put(s, null));
+
+    for (int target : bList) {
+      if (aMap.containsKey(target)) {
+        System.out.println(target);
+        break;
       }
     }
 
