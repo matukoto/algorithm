@@ -10,8 +10,19 @@ public class GreatestCommonDivisor {
     int a = sc.nextInt();
     int b = sc.nextInt();
     sc.close();
+
+    int c = 0;
+    if (a > b) {
+      c = a % b;
+      a = b;
+    } else if (a < b) {
+      c = b % a;
+    } else {
+      c = a;
+    }
+
     var aList = hoge(a);
-    var bList = hoge(b);
+    var bList = hoge(c);
 
     // 探索用のmap
     var aMap = new LinkedHashMap<Integer, Integer>();
