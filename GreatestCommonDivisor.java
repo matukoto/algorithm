@@ -11,43 +11,16 @@ public class GreatestCommonDivisor {
     int b = sc.nextInt();
     sc.close();
 
-    int c = 0;
-    if (a > b) {
-      c = a % b;
-      a = b;
-    } else if (a < b) {
-      c = b % a;
-    } else {
-      c = a;
-    }
-
-    var aList = hoge(a);
-    var bList = hoge(c);
-
-    // 探索用のmap
-    var aMap = new LinkedHashMap<Integer, Integer>();
-    aList.forEach(s -> aMap.put(s, null));
-
-    for (int target : bList) {
-      if (aMap.containsKey(target)) {
-        System.out.println(target);
-        break;
-      }
-    }
-
+    System.out.println(gcd(a, b));
   }
 
-  // 約数のリストを求める (大きい順)
-  private static List<Integer> hoge(int num) {
-    var retList = new ArrayList<Integer>();
-
-    // num 以下の数字でひたすら余りが0のものを返せばいい
-    for (int i = num; i > 0; i--) {
-      if (num % i == 0) {
-        retList.add(i);
-      }
+  private static int gcd(int a, int b) {
+    while (b != 0) {
+      int temp = a % b;
+      a = b;
+      b = temp;
     }
-    return retList;
+    return a;
   }
 
 }
