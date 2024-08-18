@@ -1,7 +1,12 @@
-import java.util.*;
+package com.argo;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class lesson1 {
+public class Lesson1 {
   public static void main(String[] args) throws Exception {
     Scanner sc = new Scanner(System.in);
     int N = sc.nextInt();
@@ -22,8 +27,7 @@ public class lesson1 {
       }
 
       inputList.set(j + 1, targetNum);
-      System.out
-          .println(inputList.stream().map(String::valueOf).collect(Collectors.joining(" ")));
+      System.out.println(inputList.stream().map(String::valueOf).collect(Collectors.joining(" ")));
     }
 
     sc.close();

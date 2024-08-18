@@ -1,2 +1,8 @@
 out/
 *.class
+.gradle/
+build/
+.classpath
+.settings/
+.project
+settings.gradle

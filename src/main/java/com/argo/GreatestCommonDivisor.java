@@ -1,8 +1,8 @@
-import java.util.*;
+package com.argo;
 
-/**
- * 最大公約数を求める
- **/
+import java.util.Scanner;
+
+/** 最大公約数を求める */
 public class GreatestCommonDivisor {
   public static void main(String[] args) {
     // input
@@ -25,5 +25,4 @@ public class GreatestCommonDivisor {
     }
     return a;
   }
-
 }
