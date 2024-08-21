@@ -12,7 +12,6 @@ public class InsertionSortTest {
 
   private StandardInputStream in = new StandardInputStream();
   private StandardOutputStream out = new StandardOutputStream();
-  private InsertionSort sort = new InsertionSort();
 
   @BeforeEach
   public void setup() {
@@ -42,47 +41,74 @@ public class InsertionSortTest {
     in.inputln("3");
     in.inputln("1 3 5");
     // テストメソッド対象実行
-    sort.main(null);
+    InsertionSort.main(null);
     // 期待値チェック
     assertEquals("1 3 5", out.readLine());
+  }
+
+  @Test
+  public void 並び換え後の並びを出力する() throws Exception {
+    // INPUT
+    in.inputln("3");
+    in.inputln("1 3 5");
+    // テストメソッド対象実行
+    InsertionSort.main(null);
+    // 期待値チェック
+    assertEquals("1 3 5", out.readLine());
+    assertEquals("1 3 5", out.readLine());
+    assertEquals("1 3 5", out.readLine());
+  }
+
+
+  @Test
+  public void 二つの数字を並び変える() throws Exception {
+    // INPUT
+    in.inputln("2");
+    in.inputln("2 1");
+    // テストメソッド対象実行
+    InsertionSort.main(null);
+    // 期待値チェック
+    assertEquals("2 1", out.readLine());
+    assertEquals("1 2", out.readLine());
+  }
+
+  /**
+   *
+   * 最終的に成功して欲しいテスト <br>
+   * これが成功すればいったんアルゴリズムOKとして良し。
+   */
+  @Test
+  public void test最後にチェック() {
+    in.inputln("6");
+    in.inputln("5 2 4 6 1 3");
+    try {
+      InsertionSort.main(null);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    assertEquals("5 2 4 6 1 3", out.readLine());
+    assertEquals("2 5 4 6 1 3", out.readLine());
+    assertEquals("2 4 5 6 1 3", out.readLine());
+    assertEquals("2 4 5 6 1 3", out.readLine());
+    assertEquals("1 2 4 5 6 3", out.readLine());
+    assertEquals("1 2 3 4 5 6", out.readLine());
   }
 
   /**
    * 最終的に成功して欲しいテスト <br>
    * これが成功すればいったんアルゴリズムOKとして良し。
    */
-  // @Test
-  // public void test最後にチェック() {
-  // in.inputln("6");
-  // in.inputln("5 2 4 6 1 3");
-  // try {
-  // sort.main(null);
-  // } catch (Exception e) {
-  // e.printStackTrace();
-  // }
-  // assertEquals("5 2 4 6 1 3", out.readLine());
-  // assertEquals("2 5 4 6 1 3", out.readLine());
-  // assertEquals("2 4 5 6 1 3", out.readLine());
-  // assertEquals("2 4 5 6 1 3", out.readLine());
-  // assertEquals("1 2 4 5 6 3", out.readLine());
-  // assertEquals("1 2 3 4 5 6", out.readLine());
-  // }
-
-  /**
-   * 最終的に成功して欲しいテスト <br>
-   * これが成功すればいったんアルゴリズムOKとして良し。
-   */
-  // @Test
-  // public void test最後にチェック2() {
-  // in.inputln("3");
-  // in.inputln("1 2 3");
-  // try {
-  // sort.main(null);
-  // } catch (Exception e) {
-  // e.printStackTrace();
-  // }
-  // assertEquals("1 2 3", out.readLine());
-  // assertEquals("1 2 3", out.readLine());
-  // assertEquals("1 2 3", out.readLine());
-  // }
+  @Test
+  public void test最後にチェック2() {
+    in.inputln("3");
+    in.inputln("1 2 3");
+    try {
+      InsertionSort.main(null);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    assertEquals("1 2 3", out.readLine());
+    assertEquals("1 2 3", out.readLine());
+    assertEquals("1 2 3", out.readLine());
+  }
 }
