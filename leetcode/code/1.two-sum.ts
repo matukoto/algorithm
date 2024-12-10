@@ -1,3 +1,7 @@
 export function twoSum(nums: number[], target: number): number[] {
-  return [3, 2];
+  // for ()
+}
+
+function difference(num1: number, target: number): number {
+  return target - num1;
 }
