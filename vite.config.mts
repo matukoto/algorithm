@@ -1,7 +1,8 @@
-import { defineConfig as defineVitestConfig } from "vitest/config";
+import { defineConfig } from "vitest/config";
 
-export default defineVitestConfig({
+export default defineConfig({
   test: {
+    include: ["leetcode/**/*.{test,spec}.{js,ts,jsx,tsx}"],
     globals: true,
   },
 });
