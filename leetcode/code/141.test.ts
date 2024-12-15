@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ListNode, hasCycle } from "./141.linked-list-cycle.ts";
+import { hasCycle } from "./141.linked-list-cycle.ts";
 
 describe("ケース例", () => {
   it("1", () => {
@@ -45,3 +45,12 @@ describe("false", () => {
     expect(hasCycle(node1)).toBeFalsy();
   });
 });
+
+export class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
+}

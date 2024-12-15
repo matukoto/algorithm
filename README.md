@@ -12,6 +12,7 @@
 - [x] 141. linked list cycle
   - 連結リストループするやり方なるほど
   - 自力で解けたがフロイドの循環検出法なるもので解いてみる
+  - とても簡潔に表現できて、アルゴリズムの美しさを体感した
 
 ## [Welcome to AOJ | Aizu Online Judge](https://onlinejudge.u-aizu.ac.jp/home)
 
