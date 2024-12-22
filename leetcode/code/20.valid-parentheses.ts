@@ -1,28 +1,27 @@
-function isValid(s: string): boolean {
-  let marus = new Array<number>();
-  let kakus = new Array<number>();
-  let namis = new Array<number>();
-
+export function isValid(s: string): boolean {
   const ss = s.split("");
-  for (let char of ss) {
-    if (char == "(") marus.push(1);
-    if (char == "[") kakus.push(1);
-    if (char == "{") namis.push(1);
-
-    if (char == ")") {
-      if (marus.length === 0) return false;
-      marus.pop();
+  console.log(ss);
+  for (let i = 0; i < ss.length; i++) {
+    if (ss[i - 1] === "(" && ss[i] === ")") {
+      ss.splice(i - 1, 2);
     }
-    if (char == "]") {
-      if (kakus.length === 0) return false;
-      kakus.pop();
+    if (ss[i - 1] === "{" && ss[i] === "}") {
+      ss.splice(i - 1, 2);
     }
-    if (char == "}") {
-      if (namis.length === 0) return false;
-      namis.pop();
+    if (ss[i - 1] === "[" && ss[i] === "]") {
+      ss.splice(i - 1, 2);
     }
+    if (ss[i] === "(" && ss[i + 1] === ")") {
+      ss.splice(i, i + 2);
+    }
+    if (ss[i] === "[" && ss[i + 1] === "]") {
+      ss.splice(i, i + 2);
+    }
+    if (ss[i] === "{" && ss[i + 1] === "}") {
+      ss.splice(i, i + 2);
+    }
+    console.log(ss);
   }
-  if (marus.length === 0 && kakus.length === 0 && namis.length === 0)
-    return true;
+  if (ss.length === 0) return true;
   return false;
 }
