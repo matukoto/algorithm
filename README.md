@@ -13,6 +13,9 @@
   - 連結リストループするやり方なるほど
   - 自力で解けたがフロイドの循環検出法なるもので解いてみる
   - とても簡潔に表現できて、アルゴリズムの美しさを体感した
+- [x] 20. valid parentheses
+  - {},[],()のペアをmapに保持するっていう発想なかったなあ。スマートすぎる
+  - stack.pop() === map.[char] ってできるのか。便利だな
 
 ## [Welcome to AOJ | Aizu Online Judge](https://onlinejudge.u-aizu.ac.jp/home)
 
