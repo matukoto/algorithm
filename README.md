@@ -23,3 +23,12 @@
 - [x] JUnit 動くようにする
   - [x] gradle もってくる
 - [x] diagnostic を消す
+
+### Java テスト実行
+
+#### leetcode
+
+- 通常実行: `leetcode/` 直下で `./gradlew test`
+- 特定テストだけ: `./gradlew test --tests KthLargestTest`
+- 変更監視で再実行: `./gradlew test --continuous`
+- watch の短縮形: `./gradlew test -t`
