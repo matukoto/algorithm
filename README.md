@@ -32,3 +32,43 @@
 - 特定テストだけ: `./gradlew test --tests KthLargestTest`
 - 変更監視で再実行: `./gradlew test --continuous`
 - watch の短縮形: `./gradlew test -t`
+
+### Java
+
+#### 配列： 固定長 array
+
+- array.length
+- Arrays.sort(array) // 昇順でソート
+- Arrays.fill(array, value) // 全ての要素を value で埋める
+
+#### 可変長配列： ArrayList<E>
+
+- list.add(value)
+- list.get(index)
+- list.set(index,value)
+- list.size()
+- Collections.sort(list) // 昇順でソート
+- list.sort(null) // 昇順でソート
+
+#### 文字列： String
+
+- str.length()
+- str.charAt(index)
+- str.substring(start,end)
+- str.toCharArray()
+- str.equals(otherStr)
+
+#### キュー、スタック ArrayDeque<E>
+
+deque.addLast(value) // キューの末尾に追加
+deque.pollFirst() // キューの先頭から要素を取り出し削除する
+deque.pollLast() // キューの末尾から要素を取り出し削除する
+deque.peekFirst() // キューの先頭の要素を取得（削除しない）
+deque.peekLast() // キューの末尾の要素を取得（削除しない）
+
+#### 連想配列 HashMap<K,V>
+
+map.put(key, value) // キーと値のペアを追加
+map.get(key) // キーに対応する値を取得
+map.getOrDefault(key, defaultValue) // キーに対応する値を取得、キーが存在しない場合は defaultValue を返す
+map.containsKey(key) // キーが存在するかどうかを確認
