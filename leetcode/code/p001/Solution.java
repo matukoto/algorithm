@@ -1,17 +1,19 @@
 package p001;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
   public int[] twoSum(int[] nums, int target) {
+    Map<Integer, Integer> hMap = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
-      // System.out.println(i + "is" + nums[i]);
-      for (int j = i + 1; j < nums.length; j++) {
-        // System.out.println(j + "js" + nums[j]);
-        if ((nums[j] + nums[i]) == target) {
-          // System.out.println(i + "and" + j);
-          return new int[] {i, j};
-        }
+      int search = target - nums[i];
+      if (hMap.containsKey(search)) {
+        return new int[] {hMap.get(search), i};
       }
+      hMap.put(nums[i], i);
     }
+
     return null;
   }
 }
